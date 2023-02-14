@@ -1,0 +1,20 @@
+[book]
+src = 'src'
+title = 'Price Oracle'
+authors = ['Price Oracle', 'Wonderland']
+description = 'Reliable, secure, and permissionless price oracles for every token.'
+language = 'en'
+
+[output.html]
+copy-fonts = false # avoid copying default fonts to book
+theme = 'src/price-theme'
+additional-css = ['src/price-theme/css/fonts.css', 'src/price-theme/css/colors.css', 'src/price-theme/css/base.css']
+additional-js = ['src/price-theme/js/theme.js', 'src/price-theme/js/base.js', 'src/price-theme/js/solidity.min.js']
+git-repository-url = 'https://github.com/price-oracle'
+git-repository-icon = 'fa-github'
+no-section-label = true
+mathjax-support = true
+
+[output.html.fold]
+enable = true    # whether or not to enable section folding
+level = 1        # the depth to start folding

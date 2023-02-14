@@ -1,0 +1,16 @@
+[profile.default]
+src = './solidity'
+test = './solidity/test'
+ignored_error_codes = []
+block_timestamp = 1675855961
+block_base_fee_per_gas = 10
+solc_version = '0.8.12'
+
+[fuzz]
+runs = 1000
+
+[profile.docs]
+src = './solidity/interfaces/'
+
+[rpc_endpoints]
+mainnet = "${MAINNET_RPC}"

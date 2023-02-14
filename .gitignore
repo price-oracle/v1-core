@@ -1,0 +1,32 @@
+# General
+node_modules
+.DS_STORE
+
+# Foundry files
+cache/
+out/
+
+# Config files
+.env
+.vscode
+
+# Not ignore gitkeep
+!/**/.gitkeep
+
+# Ignore the deployment files
+broadcast/*/*/*
+
+# Temp files
+manipulations/
+
+# Npm generated files
+npm
+
+# Docs build files
+docs/book
+docs/src/solidity/interfaces
+docs/src/static
+
+# Coverage
+lcov.info
+report

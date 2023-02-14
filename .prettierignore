@@ -1,0 +1,39 @@
+# General
+.prettierignore
+.solhintignore
+.husky
+.gitignore
+.gitattributes
+.gitmodules
+.env.example
+.env
+workspace.code-workspace
+.DS_STORE
+.github/CODEOWNERS
+LICENSE*
+
+# Foundry
+cache/
+out/
+foundry.toml
+remappings.txt
+
+# Node
+node_modules
+package-lock.json
+yarn.lock
+
+# Helper scripts
+*.sh
+
+# Github actions
+*.yml
+
+# Temp files
+manipulations/**
+
+# Docs files
+docs
+
+# Docker files
+*.Dockerfile

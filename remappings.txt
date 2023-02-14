@@ -1,0 +1,16 @@
+ds-test/=node_modules/ds-test/src
+forge-std/=node_modules/forge-std/src
+isolmate/=node_modules/@defi-wonderland/isolmate/src
+keep3r/=node_modules/@defi-wonderland/keep3r-v2/solidity
+solidity-utils/=node_modules/@defi-wonderland/solidity-utils/solidity
+chainlink/=node_modules/chainlink/contracts/src/v0.8
+uni-v3-core/=node_modules/@uniswap/v3-core/contracts
+uni-v3-periphery/=node_modules/@uniswap/v3-periphery/contracts
+weird-erc20/=node_modules/weird-erc20/src
+
+@openzeppelin/=node_modules/openzeppelin-solidity
+@uniswap/v3-core/=node_modules/@uniswap/v3-core
+@uniswap/v3-periphery/=node_modules/@uniswap/v3-periphery
+@contracts/=solidity/contracts
+@interfaces/=solidity/interfaces
+@test/=solidity/test
