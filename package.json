@@ -1,0 +1,78 @@
+{
+  "name": "@price-oracle/v1-core",
+  "private": true,
+  "keywords": [
+    "ethereum",
+    "smart",
+    "contracts",
+    "solidity",
+    "Price",
+    "oracle",
+    "uniswap"
+  ],
+  "license": "BUSL-1.1",
+  "files": [
+    "npm"
+  ],
+  "scripts": {
+    "build": "yarn compile && node interfaces-exporter.js",
+    "compile": "forge build",
+    "deploy": "echo 'script to do'",
+    "deploy:local": "forge script -vv --slow --broadcast --rpc-url http://127.0.0.1:8545 ./script/Deploy.s.sol",
+    "docs:build": "./build-docs.sh",
+    "docs:run": "mdbook serve docs",
+    "postinstall": "husky install",
+    "lint:check": "yarn lint:sol-tests && yarn lint:sol-logic && yarn lint:prettier --check",
+    "lint:fix": "sort-package-json && yarn lint:sol-tests --fix && yarn lint:sol-logic --fix && yarn lint:prettier --write",
+    "lint:prettier": "cross-env prettier './**'",
+    "lint:sol-logic": "cross-env solhint -c .solhint.logic.json 'solidity/contracts/**/*.sol' 'solidity/interfaces/**/*.sol'",
+    "lint:sol-tests": "cross-env solhint 'solidity/test/**/*.sol'",
+    "prepare": "husky install && wonderland-crypto-husky-checks install",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable",
+    "release": "standard-version",
+    "test": "yarn test:unit && yarn test:e2e",
+    "test:e2e": "forge test --match-contract E2E -vvv",
+    "test:gas": "forge test --match-contract E2E -vvv --gas-report",
+    "test:unit": "forge test --match-contract Unit -vvv"
+  },
+  "lint-staged": {
+    "*.{js,css,md,ts,sol}": "prettier --write",
+    "*.sol": "cross-env solhint --fix 'solidity/**/*.sol",
+    "package.json": "sort-package-json"
+  },
+  "dependencies": {
+    "@defi-wonderland/isolmate": "https://github.com/defi-wonderland/isolmate.git#59e18043c2450fef550f1744b3705ce9ebcaf1c8",
+    "@defi-wonderland/keep3r-v2": "0.0.0-31de77ed",
+    "@defi-wonderland/solidity-utils": "0.0.0-6c86c0fc",
+    "@uniswap/v3-core": "https://github.com/defi-wonderland/uniswap-v3-core.git#00c65edac6862bb0ddfbfd6554d20f259bc9f735",
+    "@uniswap/v3-periphery": "https://github.com/defi-wonderland/uniswap-v3-periphery.git#33df3d7265aee0d0eb537df06ce1c884b1ccd7a0",
+    "dotenv-cli": "5.1.0",
+    "ds-test": "https://github.com/dapphub/ds-test.git#9310e879db8ba3ea6d5c6489a579118fd264a3f5",
+    "forge-std": "https://github.com/foundry-rs/forge-std.git#2a2ce3692b8c1523b29de3ec9d961ee9fbbc43a6",
+    "openzeppelin-solidity": "https://github.com/openzeppelin/openzeppelin-contracts.git#b159b3fee29f6c4b5468f568856a37f78de03819"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "16.1.0",
+    "@commitlint/config-conventional": "16.0.0",
+    "@defi-wonderland/crypto-husky-checks": "0.0.0-29a10090",
+    "@typechain/ethers-v5": "10.1.0",
+    "@typechain/truffle-v5": "8.0.1",
+    "@typechain/web3-v1": "6.0.1",
+    "cross-env": "7.0.3",
+    "fs-extra": "10.1.0",
+    "husky": "8.0.2",
+    "lint-staged": "10",
+    "pinst": "2.1.6",
+    "prettier": "2.5.1",
+    "prettier-plugin-solidity": "1.0.0-beta.19",
+    "solhint": "3.3.6",
+    "solhint-plugin-prettier": "0.0.5",
+    "solhint-plugin-wonderland": "0.0.1",
+    "solidity-docgen": "0.5.16",
+    "sort-package-json": "1.53.1",
+    "standard-version": "9.3.2",
+    "typechain": "8.1.0",
+    "weird-erc20": "https://github.com/defi-wonderland/weird-erc20.git#6993b0b9096cef575d9540948b2b78d2aeb66293"
+  }
+}
